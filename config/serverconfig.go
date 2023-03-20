@@ -9,8 +9,6 @@ import (
 
 var ServerConfig *serverConfig
 
-//var ServerConfig atomic.Value
-
 type serverConfig struct {
 	Mysql struct {
 		DbPort string `yaml:"db_port"`
@@ -29,7 +27,6 @@ type serverConfig struct {
 	} `yaml:"server"`
 }
 
-// 热更新server-config
 func init() {
 	ServerConfig = getServerConfig()
 }

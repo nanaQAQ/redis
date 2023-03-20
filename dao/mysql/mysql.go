@@ -20,6 +20,7 @@ func init() {
 	Database, err = gorm.Open(mysql.Open(getPath()+"?charset=utf8mb4&parseTime=True&loc=Local"), &gorm.Config{})
 	if err != nil {
 		log.Println(err)
+		return
 	}
 	log.Println("sql connected")
 }

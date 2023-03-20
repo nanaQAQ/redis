@@ -1,10 +1,11 @@
 package main
 
 import (
-	_ "redis/public/mysql"
-	_ "redis/public/redis"
+	_ "redis/dao/mysql"
+	_ "redis/dao/redis"
+	"redis/server"
 )
 
 func main() {
-
+	server.Init()
 }
