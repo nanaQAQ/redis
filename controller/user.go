@@ -1,11 +1,15 @@
 package controller
 
 import (
-	"net/http"
+	"redis/model"
 
 	"github.com/gin-gonic/gin"
 )
 
+// /user
+
+// /user/code
 func SendCode(c *gin.Context) {
-	c.String(http.StatusOK, "Hello world!")
+	phone := c.PostForm("phone")
+	model.CodeService(phone, c)
 }

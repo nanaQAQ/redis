@@ -1,11 +1,16 @@
 package main
 
 import (
-	_ "redis/dao/mysql"
-	_ "redis/dao/redis"
-	"redis/server"
+	//_ "redis/dao/mysql"
+	//_ "redis/dao/redis"
+	"redis/router"
 )
 
 func main() {
-	server.Init()
+
+	//设置路由
+	r := router.SetupRouter()
+
+	r.SetTrustedProxies(nil)
+	r.Run(":8000")
 }
